@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block title%}
+    <title> Add Laptop</title>
+    {% endblock %}
+
+
+
+    {% block content%}
+    <div class="container jumbotron">
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>ARE YOU SURE WANT TO DELETE <span style="color:red"><i><b>{{obj.laptop_id}} , {{obj.name}}</b></i></span></p>
+        <input type="submit" value="YES" class="btn btn-danger">
+        <button class="btn btn-warning"><a href="{% url 'show_url' %}">NO</a></button>
+    </form>
+</div>
+{% endblock %}

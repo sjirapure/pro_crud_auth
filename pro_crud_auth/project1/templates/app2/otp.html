@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+
+
+    
+
+
+{% block title %}
+    <title>EMPLOYEE LOGIN</title>
+    {% endblock %}
+
+
+    {% block content %}
+    <div class="container jumbotron">
+        <form action="{% url 'verify_otp' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <p>Enter Otp for Login {{user.username}}!!!</p>
+                <input type="number" name="otp" class="form-control" required>
+                <input type="hidden" name="user" value="{{user.id}}">
+               
+                <br>
+                <input type="submit" value="VERIFY OTP" class="btn btn-success">
+               
+               
+           
+    {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <!-- </div>
+        </form>
+        <form method="post" action="{% url 'resend_otp' %}">
+            {% csrf_token %}
+            <input type="hidden" name="user" value="{{user.id}}">
+            <button type="submit">Resend OTP</button>
+            
+        </form>
+    </div>-->
+    

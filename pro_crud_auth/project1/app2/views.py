@@ -30,8 +30,8 @@ class RegisterUser(View):
              name = request.POST.get('username')
              mail = request.POST.get('email')
              
-             subject = "Welcome to CJC"
-             message = f"Hello,{name} , {mail} You are successfully register for python full day batch."
+             subject = "Welcome to python world"
+             message = f"Hello,{name} , {mail} You are successfully register for python world."
              email_from = settings.EMAIL_HOST_USER
              email_to =[mail,]
              send_mail(subject,message,email_from,email_to) 
@@ -52,7 +52,7 @@ class LoginUser(View):
         
         user =  authenticate(username=un , password = pw)
         otp = generate_otp()
-        subject = "Welcome to CJC"
+        subject = "Welcome to world"
         message = f"Hello , Your one time otp {otp} for login."
         email_from = settings.EMAIL_HOST_USER
         email_to =[user.email,]
